@@ -1,0 +1,14 @@
+package entities;
+
+public class CurrencyConverter {
+	
+	public double dolar;
+	public double dolar2;
+
+	
+	public double convert(double real) {
+		return (dolar * dolar) + (0.06 * (dolar * dolar)); 
+		
+	}
+
+}
