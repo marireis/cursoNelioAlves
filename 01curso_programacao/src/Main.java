@@ -1,3 +1,5 @@
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.Instant;
 import java.time.LocalDate;
@@ -5,10 +7,13 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.TimeZone;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParseException {
 		// TODO Auto-generated method stub
 		
 		//TREINANDO OS TIPOS
@@ -617,6 +622,9 @@ public class Main {
 		System.out.println("d05:hora  " + d05.getHour());
 		*/
 		
+		
+		//DATA E HORA E DIFERENÇA DE TEMPO
+		/*
 		LocalDate d04 = LocalDate.parse("2022-07-20");
 		LocalDateTime d05 = LocalDateTime.parse("2022-07-20T01:30:26");
 		Instant d06 = Instant.parse("2022-07-20T01:30:26Z");
@@ -651,6 +659,51 @@ public class Main {
 		
 		Duration t3 = Duration.between(semanaPas, d06);
 		System.out.println(t3.toDays());
+		
+		*/
+		/*
+		SimpleDateFormat sdf1 = new SimpleDateFormat("dd/MM/yyyy"); //declarando 
+		SimpleDateFormat sdf2 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss"); 
+		SimpleDateFormat sdf3 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss"); 
+		sdf3.setTimeZone(TimeZone.getTimeZone("GMT"));
+		
+		Date y1 = sdf1.parse("25/06/2018");
+		Date y2 = sdf2.parse("25/06/2018 15:42:07");
+		Date y3 = Date.from(Instant.parse("2018-06-25T15:42:07Z"));
+		System.out.println(y1);
+		System.out.println(y2);
+		
+		System.out.println("y1: " +sdf1.format(y1));
+		System.out.println("y2: " +sdf2.format(y2));
+		System.out.println("y3: " +sdf2.format(y3));
+		
+		Date x1 = new Date();
+		System.out.println(x1);
+		System.out.println(sdf2.format(x1));
+		
+		Date x2 = new Date(System.currentTimeMillis());
+		System.out.println(sdf2.format(x2));
+		
+		Date x3 = new Date(0L);
+		System.out.println(sdf2.format(x3));
+		
+		Date x4 = new Date(1000L * 60L * 60L * 5L);
+		System.out.println(sdf2.format(x4));
+	*/
+		
+		//Somando uma unidade de tempo
+		/*
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		Date d = Date.from(Instant.parse("2018-06-25T15:42:07Z"));
+		System.out.println(sdf.format(d));
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(d);
+		cal.add(Calendar.HOUR_OF_DAY, 4);
+		d = cal.getTime();
+		System.out.println(sdf.format(d));
+		*/
+		
+		
 	}
 	
 	
